@@ -14,4 +14,5 @@ jobs:
           start: yarn start
           wait-on: "http://localhost:3000"
           wait-on-timeout: 120
-        env: PASSWORD=${{ secrets.PASSWORD }}
+        env:
+          PASSWORD: ${{ secrets.PASSWORD }}
