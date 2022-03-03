@@ -42,6 +42,7 @@ export function addCypressLoginCommands() {
       email: "kori+cb@circleinapp.com",
       password: Cypress.env("PASSWORD"),
     };
+
     loginUser(testSchool, testUser1, sessionData);
   });
 
