@@ -22,14 +22,12 @@ function setSessionInLocalStorage(sessionData) {
 }
 
 export function addCypressLoginCommands() {
-  // TODO config that should be relied on for github secrets
   const testSchool = {
     name: "Kori Sandbox",
     id: 121,
   };
 
   Cypress.Commands.add("loginAdmin", (sessionData) => {
-    // TODO config that should be relied on for github secrets
     // const testUser1 = Cypress.env("adminTestUser");
     const adminTestUser = {
       email: "kori+sandbox@circleinapp.com",
@@ -39,17 +37,15 @@ export function addCypressLoginCommands() {
   });
 
   Cypress.Commands.add("loginUser1", (sessionData) => {
-    // TODO config that should be relied on for github secrets
     // const testUser1 = Cypress.env("testUser1");
     const testUser1 = {
       email: "kori+cb@circleinapp.com",
-      password: Cypress.env("PASSWORD"),
+      password: Cypress.env("PASSWORD") || "abc123",
     };
     loginUser(testSchool, testUser1, sessionData);
   });
 
   Cypress.Commands.add("loginUser2", (sessionData) => {
-    // TODO config that should be relied on for github secrets
     // const testUser1 = Cypress.env("testUser2");
     const testUser2 = {
       email: "kori+hs@circleinapp.com",
