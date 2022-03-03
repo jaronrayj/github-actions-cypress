@@ -40,7 +40,7 @@ export function addCypressLoginCommands() {
     // const testUser1 = Cypress.env("testUser1");
     const testUser1 = {
       email: "kori+cb@circleinapp.com",
-      password: Cypress.env("PASSWORD") || "abc123",
+      password: Cypress.env("PASSWORD"),
     };
     loginUser(testSchool, testUser1, sessionData);
   });
