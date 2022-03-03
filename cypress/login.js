@@ -23,39 +23,37 @@ function setSessionInLocalStorage(sessionData) {
 
 export function addCypressLoginCommands() {
   // TODO config that should be relied on for github secrets
-  // const testSchool: TestSchool = process.env.TEST_SCHOOL || Cypress.env('testSchool')
-  // Currently working config if not relying on env or secrets
-  const testSchool = Cypress.env("TEST_SCHOOL") || {
+  const testSchool = {
     name: "Kori Sandbox",
     id: 121,
   };
 
   Cypress.Commands.add("loginAdmin", (sessionData) => {
     // TODO config that should be relied on for github secrets
-    // const testUser1 = process.env.ADMIN_TEST_USER || Cypress.env('adminTestUser');
-    const adminTestUser = Cypress.env("ADMIN_TEST_USER") || {
+    // const testUser1 = Cypress.env("adminTestUser");
+    const adminTestUser = {
       email: "kori+sandbox@circleinapp.com",
-      password: "abc123",
+      password: Cypress.env("PASSWORD"),
     };
     loginUser(testSchool, adminTestUser, sessionData);
   });
 
   Cypress.Commands.add("loginUser1", (sessionData) => {
     // TODO config that should be relied on for github secrets
-    // const testUser1 = process.env.TEST_USER_1 || Cypress.env('testUser1');
-    const testUser1 = Cypress.env("TEST_USER_1") || {
+    // const testUser1 = Cypress.env("testUser1");
+    const testUser1 = {
       email: "kori+cb@circleinapp.com",
-      password: "abc123",
+      password: Cypress.env("PASSWORD"),
     };
     loginUser(testSchool, testUser1, sessionData);
   });
 
   Cypress.Commands.add("loginUser2", (sessionData) => {
     // TODO config that should be relied on for github secrets
-    // const testUser1 = process.env.TEST_USER_2 || Cypress.env('testUser2');
-    const testUser2 = Cypress.env("TEST_USER_2") || {
+    // const testUser1 = Cypress.env("testUser2");
+    const testUser2 = {
       email: "kori+hs@circleinapp.com",
-      password: "abc123",
+      password: Cypress.env("PASSWORD"),
     };
     loginUser(testSchool, testUser2, sessionData);
   });
